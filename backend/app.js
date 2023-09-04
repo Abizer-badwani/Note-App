@@ -12,7 +12,10 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ origin: ['https://note-app-front-ten.vercel.app'], methods: ["GET", "POST", "DELETE", "PUT"], credentials: true }))
+app.use(cors({
+  origin: [''],
+  credentials: true
+}))
 
 app.get('/', (req, res) => {
   res.json('Hello')
