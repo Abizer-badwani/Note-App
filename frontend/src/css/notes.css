@@ -1,0 +1,38 @@
+.notes{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+.note-items{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 1em 2em;
+    margin: 1%;
+    border-radius: 5px;
+    background-color: rgba(256, 256, 256, 0.3);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.note-items:hover{
+    background-color: #fff;
+}
+
+.center{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #333;
+    text-transform: capitalize;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .notes{
+        padding: 2% 1%;
+    }
+}

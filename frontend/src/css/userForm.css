@@ -1,0 +1,96 @@
+.form-container {
+    height: 70vh;
+}
+
+.form-container,
+.form-container>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container>form {
+    width: 30%;
+}
+
+
+.form-title {
+    font-size: 2.2rem;
+    margin: 3%;
+    text-transform: capitalize;
+}
+
+.form-container>form>input,
+.form-container>form>button {
+    width: 100%;
+    padding: 3%;
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+}
+
+.form-container>form>input {
+    margin: 2%;
+    background-color: #eee;
+}
+
+.form-container>form>input[type='text'] {
+    text-transform: capitalize;
+}
+.form-container>form>input[type='email'] {
+    text-transform: lowercase;
+}
+.form-container>form>input[type='email']::placeholder {
+    text-transform: capitalize;
+}
+
+.form-container>form>button {
+    margin: 3%;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.refer {
+    margin: 1%;
+    font-size: 1.2rem;
+    color: #555;
+
+}
+
+.refer:hover {
+    color: #000;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .form-container>form {
+        width: 90%;
+    }
+
+    .form-title {
+        font-size: 2rem;
+        font-weight: normal;
+    }
+
+    .form-container>form>input,
+    .form-container>form>button {
+        padding: 4%;
+        font-size: 1.2rem;
+    }
+
+    .form-container>form>input {
+        margin: 3%;
+    }
+
+    .form-container>form>button {
+        margin: 4%;
+    }
+
+    .refer {
+        font-size: 1.5rem;
+    }
+}

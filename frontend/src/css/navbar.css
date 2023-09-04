@@ -1,0 +1,57 @@
+.navbar{
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    font-weight: 300;
+}
+
+.navbar-title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.login-link, .logout-link{
+    color: #555;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.logout-link .email{
+    text-transform: lowercase;
+}
+
+.logout-text{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: cadetblue;
+}
+
+.login-link:hover{
+    color: #000;
+}
+
+@media only screen and (max-width: 1000px){
+    .navbar{
+        height: 10vh;
+        padding: 0 8%;
+    }
+    
+    .navbar-title{
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .login-link, .logout-link{
+        color: #111;
+        font-size: 1rem;
+    }
+    
+    .logout-link .email{
+        display: none;
+
+    }
+}

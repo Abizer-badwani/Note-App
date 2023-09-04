@@ -1,0 +1,46 @@
+.create-note {
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 0.3em 2em;
+}
+
+
+.create-note input {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 5%;
+}
+
+.create-note button {
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .create-note {
+        bottom: 3%;
+        right: 3%;
+        left: 3%;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 30px 20px;
+    }
+
+    .create-note input {
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 0;
+    }
+
+    .create-note button {
+        padding: 0;
+    }
+}
