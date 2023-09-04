@@ -15,9 +15,7 @@ app.use(cookieParser())
 app.use(cors({
   origin: ['https://note-app-client-abizer-badwani.vercel.app'],
   methods: ["GET", "POST", "PUT", "DELETE"],
-  headers: {
-      "Access-Control-Allow-Origin": "*"
-  },
+  Access-Control-Allow-Origin: *,
   credentials: true
 }))
 
