@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: ['https://note-app-client-abizer-badwani.vercel.app'],
+  origin: *,
   methods: ["GET", "POST", "PUT", "DELETE"],
   Access-Control-Allow-Origin: *,
   credentials: true
