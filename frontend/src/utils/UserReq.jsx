@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 
 export const signupReq = async (user) => {
     try {
-        return await axios.post('http://localhost:6969/auth/register', user)
+        return await axios.post('https://note-app-chi-livid.vercel.app/auth/register', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -11,7 +11,7 @@ export const signupReq = async (user) => {
 
 export const loginReq = async (user) => {
     try {
-        return await axios.post('http://localhost:6969/auth/login', user)
+        return await axios.post('https://note-app-chi-livid.vercel.app/auth/login', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -19,7 +19,7 @@ export const loginReq = async (user) => {
 
 export const logoutReq = async () => {
     try {
-        return await axios.get('http://localhost:6969/auth/logout')
+        return await axios.get('https://note-app-chi-livid.vercel.app/auth/logout')
     } catch (error) {
         toast.error(error.message)
     }
@@ -28,7 +28,7 @@ export const logoutReq = async () => {
 export const userDetails = async () => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.get('http://localhost:6969/user/profile')
+        return await axios.get('https://note-app-chi-livid.vercel.app/user/profile')
     }
     catch (error) {
         toast.error(error.message)
