@@ -14,6 +14,10 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({ origin: ['https://note-app-front-ten.vercel.app'], methods: ["GET", "POST", "DELETE", "PUT"], credentials: true }))
 
+app.get('/', (req, res) => {
+  res.json('Hello')
+})
+
 app.use('/auth', auth_router)
 app.use('/user', verifyUser, user_router)
 app.use('/note', verifyUser, note_router)
