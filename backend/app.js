@@ -15,6 +15,7 @@ MongoConnect()
 
 app.use(cors({
   origin: 'https://note-app-client-abizer-badwani.vercel.app',
+  allowedHeaders: 'Content-Type, Authorization',
   credentials: true
 }))
 app.use(express.json())
