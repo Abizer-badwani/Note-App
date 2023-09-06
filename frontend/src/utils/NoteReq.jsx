@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 
 export const getNotes = async () => {
     try {
-        axios.defaults.withCredentials = true
+        axios.defaults.withCredentials = 'include'
         const { data } = await axios.get('https://note-app-server-abizer-badwani.vercel.app/note/')
         if (data?.success) {
             const { notes } = data
@@ -16,7 +16,7 @@ export const getNotes = async () => {
 
 export const deleteNote = async (_id) => {
     try {
-        axios.defaults.withCredentials = true
+        axios.defaults.withCredentials = 'include'
         return await axios.delete(`https://note-app-server-abizer-badwani.vercel.app/note/delete`, { data: { _id } })
     } catch (error) {
         toast.error(error.message)
@@ -25,7 +25,7 @@ export const deleteNote = async (_id) => {
 
 export const createNote = async (title) => {
     try {
-        axios.defaults.withCredentials = true
+        axios.defaults.withCredentials = 'include'
         return await axios.post('https://note-app-server-abizer-badwani.vercel.app/note/create', { title })
     } catch (error) {
         toast.error(error.message)
