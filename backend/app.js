@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['https://note-app-client-abizer-badwani.vercel.app'],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
