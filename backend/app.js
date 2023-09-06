@@ -1,5 +1,5 @@
 import express from 'express'
-import cors from 'cors'
+// import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import morgan from 'morgan'
 
@@ -13,11 +13,12 @@ const app = express()
 
 MongoConnect()
 
-app.use(cors({
-  origin: 'https://note-app-client-abizer-badwani.vercel.app',
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}))
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://example.com");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+})
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan('tiny'))
