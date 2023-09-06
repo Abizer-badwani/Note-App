@@ -15,17 +15,14 @@ MongoConnect()
 
 
 const allowCrossDomain = (req, res, next) => {
-  res.header(`Access-Control-Allow-Origin`, `https://note-app-client-abizer-badwani.vercel.app`);
-  res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
-  res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+  res.header('Access-Control-Allow-Origin', 'https://note-app-client-abizer-badwani.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 }
 
+app.use(cors())
 app.use(allowCrossDomain())
-app.use(cors({
-  origin: 'https://note-app-client-abizer-badwani.vercel.app',
-  credentials: true
-}))
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan('tiny'))
