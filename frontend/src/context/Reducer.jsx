@@ -1,5 +1,5 @@
 
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
     switch (action.type) {
         case 'LOGIN':
             return { ...state, email: action.payload }
@@ -9,5 +9,3 @@ const reducer = (state, action) => {
             return state
     }
 }
-
-export default reducer

@@ -15,13 +15,14 @@
 
 .login-link, .logout-link{
     color: #555;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .logout-link .email{
     text-transform: lowercase;
+    font-size: 0.9rem;
 }
 
 .logout-text{

@@ -1,0 +1,17 @@
+
+.loading{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    font-size: 1.3rem;
+}
+
+.loading > span{
+
+    margin: 5px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}

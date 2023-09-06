@@ -21,7 +21,7 @@ const registerUser = async (req, res) => {
         const hash = bcrypt.hashSync(password, salt)
 
         const new_user = await user_model.create({ username, email, password: hash })
-
+        
         const token = jwt.sign({ id: new_user._id }, "IAMABIZER")
 
         return res.cookie('token', token, { httpOnly: true })

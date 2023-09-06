@@ -30,7 +30,6 @@ export const CreateNote = () => {
         onSuccess: ({ data }) => {
             if (data?.success) {
                 queryClient.invalidateQueries('notes')
-            console.log(data)
             toast.success(data?.message)
             }
             else {

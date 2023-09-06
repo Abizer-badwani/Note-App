@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast'
 export const signupReq = async (user) => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/register', user)
+        return await axios.post('http://localhost:6969/auth/register', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -13,7 +13,7 @@ export const signupReq = async (user) => {
 export const loginReq = async (user) => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/login', user)
+        return await axios.post('http://localhost:6969/auth/login', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -22,7 +22,7 @@ export const loginReq = async (user) => {
 export const logoutReq = async () => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/auth/logout')
+        return await axios.get('http://localhost:6969/auth/logout')
     } catch (error) {
         toast.error(error.message)
     }
@@ -31,7 +31,7 @@ export const logoutReq = async () => {
 export const userDetails = async () => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/user/profile')
+        return await axios.get('http://localhost:6969/user/profile')
     }
     catch (error) {
         toast.error(error.message)

@@ -9,7 +9,7 @@ import { UserState } from '../context/UserCotext'
 
 const Login = () => {
 
-  const { dispatch } = UserState()
+  const { userDispatch } = UserState()
   const [user, setUser] = useState({ email: "", password: "" })
   const handleChange = (e) => setUser(prev => ({ ...prev, [e.target.name]: e.target.value }))
   const navigate = useNavigate()
@@ -25,8 +25,8 @@ const Login = () => {
         if (data?.success) {
           const {email} = data?.user
           toast.success(data?.message)
-          dispatch({type: 'LOGIN', payload: email})
-          return navigate('/')
+          userDispatch({type: 'LOGIN', payload: email})
+          return navigate('/', {replace: true})
         }
         else {
           toast.error(data?.message)

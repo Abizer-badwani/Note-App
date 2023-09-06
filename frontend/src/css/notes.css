@@ -10,7 +10,7 @@
     padding: 1em 2em;
     margin: 1%;
     border-radius: 5px;
-    background-color: rgba(256, 256, 256, 0.3);
+    background-color: #fff;
     font-size: 1.1rem;
     text-transform: capitalize;
 }
@@ -19,7 +19,7 @@
     background-color: #fff;
 }
 
-.center{
+/* .center{
     width: 100%;
     height: 75vh;
     display: flex;
@@ -28,7 +28,18 @@
     font-size: 2rem;
     color: #333;
     text-transform: capitalize;
+} */
+
+.notes-loading{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-transform: capitalize;
 }
+
 
 
 @media only screen and (max-width: 1000px){

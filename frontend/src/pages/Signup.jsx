@@ -8,7 +8,7 @@ import '../css/userForm.css'
 
 const Signup = () => {
 
-  const {dispatch} = UserState()
+  const {userDispatch} = UserState()
   const [user, setUser] = useState({ username: "", email: "", password: "" })
   const handleChange = (e) => setUser(prev => ({ ...prev, [e.target.name]: e.target.value }))
   const navigate = useNavigate()
@@ -23,9 +23,9 @@ const Signup = () => {
 
         if (data?.success) {
           const {email} = data?.user
-          dispatch({type: 'LOGIN', payload : email})
+          userDispatch({type: 'LOGIN', payload : email})
           toast.success(data?.message)
-          return navigate('/')
+          return navigate('/', {replace: true})
         }
         else {
           toast.error(data?.message)

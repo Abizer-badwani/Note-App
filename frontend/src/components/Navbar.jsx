@@ -8,11 +8,11 @@ import { LogoutUser } from '../utils/UserQueries'
 
 const Navbar = () => {
 
-    const { state, dispatch } = UserState()
+    const { userState, userDispatch } = UserState()
     const { mutate } = LogoutUser()
     
     const handleLogout = () => {
-        dispatch({ type: 'LOGOUT' })
+        userDispatch({ type: 'LOGOUT' })
         mutate()
     }
 
@@ -20,9 +20,9 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className="navbar-title">Note</div>
             {
-                state?.email ? 
+                userState?.email ? 
                     <div className='logout-link'>
-                        <span className='email'>{state?.email} - </span>
+                        <span className='email'>{userState?.email} - </span>
                         <span className='logout-text' onClick={handleLogout}>LOGOUT</span>
                     </div>
                     :
