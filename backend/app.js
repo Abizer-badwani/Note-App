@@ -12,23 +12,17 @@ import verifyUser   from './middlewares/verifyUser.js'
 const app = express()
 
 MongoConnect()
-app.use(express.json())
-app.use(cookieParser())
-app.use(morgan('tiny'))
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://note-app-client-abizer-badwani.vercel.app")
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
-  res.header("Access-Control-Allow-Credentials", true)
-  next()
-});
 
 app.use(cors({
   origin: ['https://note-app-client-abizer-badwani.vercel.app'],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
+app.use(express.json())
+app.use(cookieParser())
+app.use(morgan('tiny'))
+
+
 
 app.get('/', (req, res) => {
   res.json('Hello')
