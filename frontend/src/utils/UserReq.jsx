@@ -1,10 +1,15 @@
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 
+const instance = axios.create({
+    withCredentials: true,
+    base_url: 'https://note-app-server-abizer-badwani.vercel.app/'
+})
+
 export const signupReq = async (user) => {
     try {
         axios.defaults.withCredentials = true
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/register', user)
+        return await instance.post('auth/register', user)
     } catch (error) {
         toast.error(error.message)
     }
