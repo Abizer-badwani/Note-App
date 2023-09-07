@@ -9,6 +9,7 @@ export const DeleteNote = () => {
     const queryClient = useQueryClient()
     return useMutation((id) => deleteNote(id), {
         onSuccess: ({ data }) => {
+            console.log(data)
             if (data?.success) {
                 queryClient.invalidateQueries('notes')
                 toast.success(data?.message)

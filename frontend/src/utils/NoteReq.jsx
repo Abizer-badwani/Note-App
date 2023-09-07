@@ -1,14 +1,16 @@
 import axios from "axios"
 import toast from 'react-hot-toast'
 
-const instance = axios.create({
-    withCredentials: true,
-    baseURL: 'https://note-app-server-abizer-badwani.vercel.app'
-})
-
 export const getNotes = async () => {
     try {
-        const { data } = await instance.get('note/')
+        const { data } = await axios.get('http://localhost:6969/note/',{
+            withCredentials: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                'Content-Type': 'application/json',
+            },
+        })
         if (data?.success) {
             const { notes } = data
             return notes
@@ -20,7 +22,15 @@ export const getNotes = async () => {
 
 export const deleteNote = async (_id) => {
     try {
-        return await instance.delete('note/delete', { data: { _id } })
+        return await axios.delete('http://localhost:6969/note/delete', {
+            data: { _id },
+            headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            'Content-Type': 'application/json',
+        },
+            withCredentials: true
+        })
     } catch (error) {
         toast.error(error.message)
     }
@@ -28,7 +38,14 @@ export const deleteNote = async (_id) => {
 
 export const createNote = async (title) => {
     try {
-        return await instance.post('note/create', { title })
+        return await axios.post('http://localhost:6969/note/create', { title }, {
+            withCredentials: true,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                'Content-Type': 'application/json',
+            },
+        })
     } catch (error) {
         toast.error(error.message)
     }

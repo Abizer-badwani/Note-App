@@ -16,6 +16,7 @@ const UserContextProvider = ({ children }) => {
             setLoadingState(true)
             try {
                 const response = await userDetails()
+                console.log(response)
                 if (response?.data?.success) {
                     const { email } = response?.data?.user
                     userDispatch({ type: 'LOGIN', payload: email })
