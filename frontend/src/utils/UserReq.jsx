@@ -8,7 +8,6 @@ const instance = axios.create({
 
 export const signupReq = async (user) => {
     try {
-        axios.defaults.withCredentials = true
         return await instance.post('auth/register', user)
     } catch (error) {
         toast.error(error.message)
@@ -17,7 +16,6 @@ export const signupReq = async (user) => {
 
 export const loginReq = async (user) => {
     try {
-        axios.defaults.withCredentials = true
         return await instance.post('auth/login', user)
     } catch (error) {
         toast.error(error.message)
@@ -26,7 +24,6 @@ export const loginReq = async (user) => {
 
 export const logoutReq = async () => {
     try {
-        axios.defaults.withCredentials = true
         return await instance.get('/auth/logout')
     } catch (error) {
         toast.error(error.message)
@@ -35,7 +32,6 @@ export const logoutReq = async () => {
 
 export const userDetails = async () => {
     try {
-        axios.defaults.withCredentials = true
         return await instance.get('user/profile')
     }
     catch (error) {
