@@ -1,17 +1,14 @@
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 
+const instance = axios.create({
+    baseURL: 'https://note-app-server-abizer-badwani.vercel.app/',
+    withCredentials: true
+})
 
 export const signupReq = async (user) => {
     try {
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/register', user, {
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            },
-        })
+        return await instance.post('auth/register', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -19,14 +16,7 @@ export const signupReq = async (user) => {
 
 export const loginReq = async (user) => {
     try {
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/login', user, {
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            },
-        })
+        return await instance.post('auth/login', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -34,14 +24,7 @@ export const loginReq = async (user) => {
 
 export const logoutReq = async () => {
     try {
-        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/auth/logout', {
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            }
-        })
+        return await instance.get('auth/logout')
     } catch (error) {
         toast.error(error.message)
     }
@@ -49,14 +32,7 @@ export const logoutReq = async () => {
 
 export const userDetails = async () => {
     try {
-        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/user/profile', {
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            }
-        })
+        return await instance.get('user/profile')
 
     }
     catch (error) {

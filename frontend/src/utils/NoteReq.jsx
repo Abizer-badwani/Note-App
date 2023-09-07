@@ -1,16 +1,14 @@
 import axios from "axios"
 import toast from 'react-hot-toast'
 
+const instance = axios.create({
+    baseURL: 'https://note-app-server-abizer-badwani.vercel.app/',
+    withCredentials: true
+})
+
 export const getNotes = async () => {
     try {
-        const { data } = await axios.get('https://note-app-server-abizer-badwani.vercel.app/note/',{
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            },
-        })
+        const { data } = await instance.get('note/')
         if (data?.success) {
             const { notes } = data
             return notes
@@ -22,15 +20,7 @@ export const getNotes = async () => {
 
 export const deleteNote = async (_id) => {
     try {
-        return await axios.delete('https://note-app-server-abizer-badwani.vercel.app/note/delete', {
-            data: { _id },
-            headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-            'Content-Type': 'application/json',
-        },
-            withCredentials: true
-        })
+        return await instance.delete('note/delete', {data: { _id }})
     } catch (error) {
         toast.error(error.message)
     }
@@ -38,16 +28,8 @@ export const deleteNote = async (_id) => {
 
 export const createNote = async (title) => {
     try {
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/note/create', { title }, {
-            withCredentials: true,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                'Content-Type': 'application/json',
-            },
-        })
+        return await instance.post('note/create', { title })
     } catch (error) {
         toast.error(error.message)
     }
 }
-
