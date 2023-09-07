@@ -15,7 +15,7 @@ MongoConnect()
 
 const allowCors = fn => async (req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', 'http://note-app-client-abizer-badwani.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://note-app-client-abizer-badwani.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
   res.setHeader(
     'Access-Control-Allow-Headers',
