@@ -15,7 +15,7 @@ MongoConnect()
 
 app.use(cors({
   origin: 'https://note-app-client-abizer-badwani.vercel.app',
-  methods: ['GET', 'POST', 'DELETE'],
+  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   credentials: true
 }))
 
