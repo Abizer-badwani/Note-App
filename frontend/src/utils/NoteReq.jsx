@@ -1,6 +1,11 @@
 import axios from "axios"
 import toast from 'react-hot-toast'
 
+const instance = axios.create({
+    withCredentials: true,
+    baseURL: 'https://note-app-server-abizer-badwani.vercel.app'
+})
+
 export const getNotes = async () => {
     try {
         axios.defaults.withCredentials = true

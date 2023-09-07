@@ -15,11 +15,9 @@ MongoConnect()
 
 app.use(cors({
   origin: 'https://note-app-client-abizer-badwani.vercel.app',
-  methods: ['GET', ''],
+  methods: ['*'],
   credentials: true
 }))
-
-app.use(allowCrossDomain())
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan('tiny'))
