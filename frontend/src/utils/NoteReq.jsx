@@ -8,8 +8,7 @@ const instance = axios.create({
 
 export const getNotes = async () => {
     try {
-        axios.defaults.withCredentials = true
-        const { data } = await axios.get('https://note-app-server-abizer-badwani.vercel.app/note/')
+        const { data } = await instance.get('note/')
         if (data?.success) {
             const { notes } = data
             return notes
@@ -21,8 +20,7 @@ export const getNotes = async () => {
 
 export const deleteNote = async (_id) => {
     try {
-        axios.defaults.withCredentials = true
-        return await axios.delete(`https://note-app-server-abizer-badwani.vercel.app/note/delete`, { data: { _id } })
+        return await instance.delete('note/delete', { data: { _id } })
     } catch (error) {
         toast.error(error.message)
     }
@@ -30,8 +28,7 @@ export const deleteNote = async (_id) => {
 
 export const createNote = async (title) => {
     try {
-        axios.defaults.withCredentials = true
-        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/note/create', { title })
+        return await instance.post('note/create', { title })
     } catch (error) {
         toast.error(error.message)
     }
