@@ -1,14 +1,11 @@
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 
-const instance = axios.create({
-    baseURL: 'https://note-app-server-abizer-badwani.vercel.app/',
-    withCredentials: true
-})
+axios.defaults.withCredentials = true
 
 export const signupReq = async (user) => {
     try {
-        return await instance.post('auth/register', user)
+        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/register', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -16,7 +13,7 @@ export const signupReq = async (user) => {
 
 export const loginReq = async (user) => {
     try {
-        return await instance.post('auth/login', user)
+        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/auth/login', user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -24,7 +21,7 @@ export const loginReq = async (user) => {
 
 export const logoutReq = async () => {
     try {
-        return await instance.get('auth/logout')
+        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/auth/logout')
     } catch (error) {
         toast.error(error.message)
     }
@@ -32,7 +29,7 @@ export const logoutReq = async () => {
 
 export const userDetails = async () => {
     try {
-        return await instance.get('user/profile')
+        return await axios.get('https://note-app-server-abizer-badwani.vercel.app/user/profile')
 
     }
     catch (error) {
