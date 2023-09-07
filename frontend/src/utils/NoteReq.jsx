@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 
 export const getNotes = async () => {
     try {
-        const { data } = await axios.get('http://localhost:6969/note/',{
+        const { data } = await axios.get('https://note-app-server-abizer-badwani.vercel.app/note/',{
             withCredentials: true,
             headers: {
                 'Access-Control-Allow-Origin': '*',
@@ -22,7 +22,7 @@ export const getNotes = async () => {
 
 export const deleteNote = async (_id) => {
     try {
-        return await axios.delete('http://localhost:6969/note/delete', {
+        return await axios.delete('https://note-app-server-abizer-badwani.vercel.app/note/delete', {
             data: { _id },
             headers: {
             'Access-Control-Allow-Origin': '*',
@@ -38,7 +38,7 @@ export const deleteNote = async (_id) => {
 
 export const createNote = async (title) => {
     try {
-        return await axios.post('http://localhost:6969/note/create', { title }, {
+        return await axios.post('https://note-app-server-abizer-badwani.vercel.app/note/create', { title }, {
             withCredentials: true,
             headers: {
                 'Access-Control-Allow-Origin': '*',
