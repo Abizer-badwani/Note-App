@@ -13,11 +13,11 @@ const app = express()
 
 MongoConnect()
 
-app.use(cors({
-  origin: 'https://note-app-client-abizer-badwani.vercel.app',
-  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
-  credentials: true
-}))
+// app.use(cors({
+//   origin: 'https://note-app-client-abizer-badwani.vercel.app',
+//   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+//   credentials: true
+// }))
 
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['https://note-app-client-abizer-badwani.vercel.app']);
