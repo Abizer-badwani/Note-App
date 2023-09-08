@@ -13,11 +13,21 @@ const app = express()
 
 MongoConnect()
 
+const allowHeaders = (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://note-app-client-abizer-badwani.vercel.app'),
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'),
+    res.header('Access-Control-Allow-Headers', 'Content-Type'),
+
+    next()
+}
+
 app.use(cors({
   origin: 'https://note-app-client-abizer-badwani.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   credentials: true
 }))
+
+app.use(allowHeaders())
 
 app.use(express.json())
 app.use(cookieParser())
