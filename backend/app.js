@@ -14,9 +14,9 @@ const app = express()
 MongoConnect()
 
 const allowHeaders = (req, res, next) => {
-    res.Header('Access-Control-Allow-Origin', 'https://note-app-client-abizer-badwani.vercel.app'),
-    res.Header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'),
-    res.Header('Access-Control-Allow-Headers', 'Content-Type'),
+    res.headers('Access-Control-Allow-Origin', 'https://note-app-client-abizer-badwani.vercel.app'),
+    res.headers('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'),
+    res.headers('Access-Control-Allow-Headers', 'Content-Type'),
 
     next()
 }
