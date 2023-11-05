@@ -14,7 +14,7 @@ const app = express()
 MongoConnect()
 
 app.use(cors({
-  origin: '*',
+  origin: ["https://note-app-sooty-nu.vercel.app/"],
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   credentials: true
 }))
