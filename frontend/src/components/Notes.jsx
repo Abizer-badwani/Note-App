@@ -26,7 +26,7 @@ const Notes = () => {
                         :
                         data ?
                             data?.map((note) => {
-                                return <li key={note?._id} className='note-items'><span>{note?.noteTitle}</span><MdDeleteOutline onClick={() => mutate(note?._id)} size={'30'} /></li>
+                                return <li key={note?._id} className='note-items'><span>{note?.noteTitle}</span><MdDeleteOutline style={{cursor: 'pointer'}} onClick={() => mutate(note?._id)} size={'30'} /></li>
                             })
                             :
                             <div className='no-notes'>No Notes. Create Now!</div>
