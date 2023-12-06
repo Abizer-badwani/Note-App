@@ -30,7 +30,6 @@ export const logoutReq = async () => {
 export const userDetails = async () => {
     try {
         return await axios.get('http://localhost:6969/user/profile')
-
     }
     catch (error) {
         toast.error(error.message)
