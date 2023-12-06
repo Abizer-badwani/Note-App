@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 
-const URL = 'mongodb+srv://badwaniwalaabizer:bXOArLCACB4Q68Yi@notecluster.26wps4t.mongodb.net/NotesDB?retryWrites=true&w=majority'
-// const URL = 'mongodb://127.0.0.1/Notes'
+const URL = 'mongodb+srv://badwaniwalaabizer:bXOArLCACB4Q68Yi@notecluster.26wps4t.mongodb.net/NotesDB'
 export const MongoConnect = () => {
     try {
         mongoose.connect(URL, { useNewUrlParser: true });    
@@ -10,5 +9,3 @@ export const MongoConnect = () => {
         console.log(error)
     }
 }
-
-// bXOArLCACB4Q68Yi
