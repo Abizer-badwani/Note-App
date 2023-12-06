@@ -13,7 +13,7 @@ const app = express()
 MongoConnect()
 
 app.use(cors({
-  origin: [""],
+  origin: ["https://note-app-client-10nr.onrender.com"],
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   credentials: true
 }))
