@@ -2,10 +2,11 @@ import axios from 'axios'
 import { toast } from 'react-hot-toast'
 
 axios.defaults.withCredentials = true
+const URL = 'http://localhost:6969'
 
 export const signupReq = async (user) => {
     try {
-        return await axios.post('http://localhost:6969/auth/register', user)
+        return await axios.post(`${URL}/auth/register`, user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -13,7 +14,7 @@ export const signupReq = async (user) => {
 
 export const loginReq = async (user) => {
     try {
-        return await axios.post('http://localhost:6969/auth/login', user)
+        return await axios.post(`${URL}/auth/login`, user)
     } catch (error) {
         toast.error(error.message)
     }
@@ -21,7 +22,7 @@ export const loginReq = async (user) => {
 
 export const logoutReq = async () => {
     try {
-        return await axios.get('http://localhost:6969/auth/logout')
+        return await axios.get(`${URL}/auth/logout`)
     } catch (error) {
         toast.error(error.message)
     }
@@ -29,7 +30,7 @@ export const logoutReq = async () => {
 
 export const userDetails = async () => {
     try {
-        return await axios.get('http://localhost:6969/user/profile')
+        return await axios.get(`${URL}/user/profile`)
     }
     catch (error) {
         toast.error(error.message)
