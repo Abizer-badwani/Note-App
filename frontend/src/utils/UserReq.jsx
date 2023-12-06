@@ -2,7 +2,7 @@ import axios from 'axios'
 import { toast } from 'react-hot-toast'
 
 axios.defaults.withCredentials = true
-const URL = 'http://localhost:6969'
+const URL = 'https://note-app-server-hlbz.onrender.com'
 
 export const signupReq = async (user) => {
     try {
